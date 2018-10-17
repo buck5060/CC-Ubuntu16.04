@@ -66,16 +66,19 @@ if [ $UBUNTU_ADJECTIVE == $TRUSTY ]; then
 elif [ $UBUNTU_ADJECTIVE == $XENIAL ]; then
   ELEMENTS="$ELEMENTS dhcp-all-interfaces cc-metrics"
 elif [ $UBUNTU_ADJECTIVE == $BIONIC ]; then
-  ELEMENTS="$ELEMENTS dhcp-all-interfaces cc-metrics"
+  ELEMENTS="$ELEMENTS dhcp-all-interfaces"
 else
   echo "Unknown Ubuntu release"
   exit 1
 fi
 
+DIB_BOOTLOADER_DEFAULT_CMDLINE='console=ttyS0,115200'
+
 disk-image-create \
   chameleon-common \
   $ELEMENTS \
   $EXTRA_ELEMENTS \
+  DTN \
   -o $OUTPUT_FILE
 
 if [ -f "$OUTPUT_FILE.qcow2" ]; then

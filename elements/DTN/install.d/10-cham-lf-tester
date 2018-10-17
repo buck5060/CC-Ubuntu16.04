@@ -1,0 +1,7 @@
+#!/bin/bash
+
+git clone --recursive https://github.com/youf3/Cham_LF_tester.git /tmp/Cham_LF_tester
+cd /tmp/Cham_LF_tester && make
+cd /tmp/Cham_LF_tester && sudo make install
+rm -rf /tmp/Cham_LF_tester
+

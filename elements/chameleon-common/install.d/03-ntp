@@ -9,6 +9,6 @@ set -o pipefail
 apt-get remove -y chrony
 apt-get install -y ntp
 
-echo "server ntp.tacc.utexas.edu iburst" >> /etc/ntp.conf
+echo "server time.northwestern.edu iburst" >> /etc/ntp.conf
 
 service ntp start

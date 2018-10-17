@@ -14,4 +14,4 @@ sudo curl https://github.com/ChameleonCloud/intercoolr/releases/download/${ARTIF
     -o $ARTIFACT_TARGET \
     -L
 
-sudo chmod +x $ARTIFACT_TARGET
+# sudo chmod +x $ARTIFACT_TARGET

@@ -6,7 +6,17 @@
 # from the distro configuration specified below
 users:
    - default
+   - name: icairadmin
+     uid: '1009'
+     lock-passwd: true
+     gecos: iCAIR Admin User
+     groups: [wheel, adm, systemd-journal]
+     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+     shell: /bin/bash
+     ssh-authorized-keys:
+       - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0fG082EwjVUrMZrEC+1n68/ptiXKXDIiNmol95WELNo5ak4AXer+n0S1PL6Wyma04FMRfPSXmQn+WmbNujGpMZliiNPscpv8MyDLzt2xf7OegvKqbqHu6NuWzLnk2+SGMjfCQ3uNdb61za2/KpZ1QcxaScxM9Y0+kKPV8c0pBviJJwuBOpqxBathGGukg5NXkl6honB2P/fy/w8L89GsYFiL5KNTQGzL+Z1xUeiACtfA4mDxVQ/4g1Id/jOO7nGQRs4RaqjkVAKwRXh820HTolbLWeCIj1Ayq1Y/vlSLbWakjYnZXJ4i9SSnESzc/kiYL01P15IcxmETE+JPbOZePQ==
    - name: ccadmin
+     uid: '1010'
      lock-passwd: true
      gecos: Chameleon Cloud Admin User
      groups: [wheel, adm, systemd-journal]
@@ -93,7 +103,7 @@ system_info:
    default_user:
      name: cc
      lock_passwd: True
-     gecos: Chameleon Cloud User
+     gecos: Normal User
      groups: [adm, audio, cdrom, dialout, dip, floppy, netdev, plugdev, sudo, video]
      sudo: ["ALL=(ALL) NOPASSWD:ALL"]
      shell: /bin/bash
