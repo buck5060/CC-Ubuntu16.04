@@ -7,7 +7,7 @@ set -eu
 set -o pipefail
 
 # Clone the "cc-snapshot" script
-git clone https://github.com/ChameleonCloud/cc-snapshot.git
+git clone https://github.com/buck5060/cc-snapshot.git
 
 # Ensure that "cc-snapshot" is executable
 chmod +x cc-snapshot/cc-snapshot
