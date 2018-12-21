@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ ${DIB_DEBUG_TRACE:-0} -gt 0 ]; then
+    set -x
+fi
+set -eu
+set -o pipefail
+
+cd /tmp && wget https://gist.githubusercontent.com/buck5060/bda30932aa8036bc140838b1ccc28bf8/raw/4a430df9a298515408c198a4714ba1b6844f4b9d/sl-ciab.northwestern.edu-interm.crt
+cd /tmp && sudo cp sl-ciab.northwestern.edu-interm.crt /usr/local/share/ca-certificates
+sudo update-ca-certificates
+
+cd /tmp && rm sl-ciab.northwestern.edu-interm.crt
+
+exit 0
